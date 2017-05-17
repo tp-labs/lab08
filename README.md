@@ -9,8 +9,9 @@ $ open https://docs.docker.com/get-started/
 ## Tasks
 
 - [ ] 1. Создать публичный репозиторий с названием **lab13** на сервисе **GitHub**
-- [ ] 2. Выполнить инструкцию учебного материала
-- [ ] 3. Ознакомиться со ссылками учебного материала
+- [ ] 2. Ознакомиться со ссылками учебного материала
+- [ ] 3. Выполнить инструкцию учебного материала
+- [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
@@ -110,6 +111,13 @@ $ cat logs/log.txt
 ```
 
 ```bash
+$ vim README.md
+/lab12<CR>
+e<C-A>
+:wq
+```
+
+```bash
 $ git add Dockerfile
 $ git commit -m"adding Dockerfile"
 $ git push origin master
@@ -119,3 +127,7 @@ $ git push origin master
 
 - [Instructions](https://docs.docker.com/engine/reference/builder/)
 - [Book](https://www.dockerbook.com)
+
+```
+Copyright (c) 2017 Vyacheslav Vershinin
+```
