@@ -138,6 +138,19 @@ $ travis login --auto
 $ travis enable
 ```
 
+## Report
+
+```bash
+$ cd ~/workspace/labs/
+$ export LAB_NUMBER=13
+$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+$ mkdir reports/lab${LAB_NUMBER}
+$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+$ cd reports/lab${LAB_NUMBER}
+$ edit REPORT.md
+$ gistup -m"lab${LAB_NUMBER}"
+```
+
 ## Links
 
 - [Instructions](https://docs.docker.com/engine/reference/builder/)
