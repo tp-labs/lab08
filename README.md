@@ -117,9 +117,25 @@ $ vim README.md
 ```
 
 ```bash
+$ vim .travis.yml
+/lang<CR>o
+services:
+  - docker<ESC>
+jVGddo
+script:
+  - docker build -t logger .<ESC>
+```
+
+```bash
 $ git add Dockerfile
+$ git add .travis.yml
 $ git commit -m"adding Dockerfile"
 $ git push origin master
+```
+
+```bash
+$ travis login --auto
+$ travis enable
 ```
 
 ## Links
