@@ -112,8 +112,7 @@ $ cat logs/log.txt
 
 ```bash
 $ vim README.md
-/lab12<CR>
-e<C-A>
+:s/lab12/lab13/g<CR>
 :wq
 ```
 
