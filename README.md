@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению систем для автоматизации развёртывания и управления приложениями на примере **Docker**
 
-```bash
+```ShellSession
 $ open https://docs.docker.com/get-started/
 ```
 
@@ -15,24 +15,24 @@ $ open https://docs.docker.com/get-started/
 
 ## Tutorial
 
-```bash
+```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
-```bash
+```ShellSession
 $ git clone https://github.com/${GITHUB_USERNAME}/lab12 lab13
 $ cd lab13
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab13
 ```
 
-```bash
+```ShellSession
 $ cat > Dockerfile <<EOF
 FROM ubuntu:16.04
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 RUN apt update
@@ -40,7 +40,7 @@ RUN apt install -yy gcc g++ cmake
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 COPY . print/
@@ -48,7 +48,7 @@ WORKDIR print
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 RUN cmake -H. -B_build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=_install
@@ -57,43 +57,43 @@ RUN cmake --build _build --target install
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 ENV LOG_PATH /home/logs/log.txt
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 VOLUME /home/logs
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 WORKDIR _install/bin
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> Dockerfile <<EOF
 
 CMD ./demo
 EOF
 ```
 
-```bash
+```ShellSession
 $ docker build -t logger .
 ```
 
-```bash
+```ShellSession
 $ docker images
 ```
 
-```bash
+```ShellSession
 $ mkdir logs
 $ docker run -it -v "$(pwd)/logs/:/home/logs/" logger
 text1
@@ -102,21 +102,21 @@ text3
 <C-D>
 ```
 
-```bash
+```ShellSession
 $ docker inspect logger
 ```
 
-```bash
+```ShellSession
 $ cat logs/log.txt
 ```
 
-```bash
+```ShellSession
 $ vim README.md
 :s/lab12/lab13/g<CR>
 :wq
 ```
 
-```bash
+```ShellSession
 $ vim .travis.yml
 /lang<CR>o
 services:
@@ -126,21 +126,21 @@ script:
   - docker build -t logger .<ESC>
 ```
 
-```bash
+```ShellSession
 $ git add Dockerfile
 $ git add .travis.yml
 $ git commit -m"adding Dockerfile"
 $ git push origin master
 ```
 
-```bash
+```ShellSession
 $ travis login --auto
 $ travis enable
 ```
 
 ## Report
 
-```bash
+```ShellSession
 $ cd ~/workspace/labs/
 $ export LAB_NUMBER=13
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
