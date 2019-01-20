@@ -117,9 +117,7 @@ $ cat logs/log.txt
 ```
 
 ```ShellSession
-$ vim README.md
-:s/lab12/lab13/g<CR>
-:wq
+$ gsed -i 's/lab04/lab05/g' README.md
 ```
 
 ```ShellSession
@@ -130,6 +128,7 @@ services:
 jVGddo
 script:
   - docker build -t logger .<ESC>
+:wq
 ```
 
 ```ShellSession
