@@ -1,4 +1,4 @@
-## Laboratory work XIII
+## Laboratory work VIII
 
 Данная лабораторная работа посвещена изучению систем автоматизации развёртывания и управления приложениями на примере **Docker**
 
@@ -8,7 +8,7 @@ $ open https://docs.docker.com/get-started/
 
 ## Tasks
 
-- [ ] 1. Создать публичный репозиторий с названием **lab13** на сервисе **GitHub**
+- [ ] 1. Создать публичный репозиторий с названием **lab08** на сервисе **GitHub**
 - [ ] 2. Ознакомиться со ссылками учебного материала
 - [ ] 3. Выполнить инструкцию учебного материала
 - [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
@@ -20,15 +20,15 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab12 lab13
-$ cd lab13
+$ git clone https://github.com/${GITHUB_USERNAME}/lab07 lab08
+$ cd lab08
 $ git remote remove origin
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab13
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab08
 ```
 
 ```ShellSession
 $ cat > Dockerfile <<EOF
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 EOF
 ```
 
@@ -142,7 +142,7 @@ $ travis enable
 
 ```ShellSession
 $ cd ~/workspace/labs/
-$ export LAB_NUMBER=13
+$ export LAB_NUMBER=08
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
@@ -153,9 +153,9 @@ $ gistup -m "lab${LAB_NUMBER}"
 
 ## Links
 
-- [Instructions](https://docs.docker.com/engine/reference/builder/)
 - [Book](https://www.dockerbook.com)
+- [Instructions](https://docs.docker.com/engine/reference/builder/)
 
 ```
-Copyright (c) 2017 Братья Вершинины
+Copyright (c) 2015-2019 The ISC Authors
 ```
