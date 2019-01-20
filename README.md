@@ -19,6 +19,12 @@ $ open https://docs.docker.com/get-started/
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
+```
+$ cd ${GITHUB_USERNAME}/workspace
+$ pushd .
+$ source scripts/activate
+```
+
 ```ShellSession
 $ git clone https://github.com/${GITHUB_USERNAME}/lab07 lab08
 $ cd lab08
@@ -141,7 +147,7 @@ $ travis enable
 ## Report
 
 ```ShellSession
-$ cd ~/workspace/labs/
+$ popd
 $ export LAB_NUMBER=08
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
