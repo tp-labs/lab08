@@ -125,10 +125,10 @@ $ gsed -i 's/lab07/lab08/g' README.md
 $ vim .travis.yml
 /lang<CR>o
 services:
-  - docker<ESC>
-jVGddo
+- docker<ESC>
+jVGdo
 script:
-  - docker build -t logger .<ESC>
+- docker build -t logger .<ESC>
 :wq
 ```
 
