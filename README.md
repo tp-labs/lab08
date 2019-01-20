@@ -87,7 +87,7 @@ EOF
 ```ShellSession
 $ cat >> Dockerfile <<EOF
 
-CMD ./demo
+ENTRYPOINT ./demo
 EOF
 ```
 
