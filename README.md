@@ -118,7 +118,7 @@ $ cat logs/log.txt
 ```
 
 ```ShellSession
-$ gsed -i 's/lab04/lab05/g' README.md
+$ gsed -i 's/lab07/lab08/g' README.md
 ```
 
 ```ShellSession
