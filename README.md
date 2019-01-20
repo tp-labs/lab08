@@ -42,7 +42,7 @@ EOF
 $ cat >> Dockerfile <<EOF
 
 RUN apt update
-RUN apt install -yy gcc g++ cmake 
+RUN apt install -yy gcc g++ cmake
 EOF
 ```
 
