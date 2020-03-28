@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению систем автоматизации развёртывания и управления приложениями на примере **Docker**
 
-```ShellSession
+```sh
 $ open https://docs.docker.com/get-started/
 ```
 
@@ -15,7 +15,7 @@ $ open https://docs.docker.com/get-started/
 
 ## Tutorial
 
-```ShellSession
+```sh
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
@@ -25,7 +25,7 @@ $ pushd .
 $ source scripts/activate
 ```
 
-```ShellSession
+```sh
 $ git clone https://github.com/${GITHUB_USERNAME}/lab07 lab08
 $ cd lab08
 $ git submodule update --init
@@ -33,13 +33,13 @@ $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab08
 ```
 
-```ShellSession
+```sh
 $ cat > Dockerfile <<EOF
 FROM ubuntu:18.04
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 RUN apt update
@@ -47,7 +47,7 @@ RUN apt install -yy gcc g++ cmake
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 COPY . print/
@@ -55,7 +55,7 @@ WORKDIR print
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 RUN cmake -H. -B_build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=_install
@@ -64,43 +64,43 @@ RUN cmake --build _build --target install
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 ENV LOG_PATH /home/logs/log.txt
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 VOLUME /home/logs
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 WORKDIR _install/bin
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> Dockerfile <<EOF
 
 ENTRYPOINT ./demo
 EOF
 ```
 
-```ShellSession
+```sh
 $ docker build -t logger .
 ```
 
-```ShellSession
+```sh
 $ docker images
 ```
 
-```ShellSession
+```sh
 $ mkdir logs
 $ docker run -it -v "$(pwd)/logs/:/home/logs/" logger
 text1
@@ -109,19 +109,19 @@ text3
 <C-D>
 ```
 
-```ShellSession
+```sh
 $ docker inspect logger
 ```
 
-```ShellSession
+```sh
 $ cat logs/log.txt
 ```
 
-```ShellSession
+```sh
 $ gsed -i 's/lab07/lab08/g' README.md
 ```
 
-```ShellSession
+```sh
 $ vim .travis.yml
 /lang<CR>o
 services:
@@ -132,21 +132,21 @@ script:
 :wq
 ```
 
-```ShellSession
+```sh
 $ git add Dockerfile
 $ git add .travis.yml
 $ git commit -m"adding Dockerfile"
 $ git push origin master
 ```
 
-```ShellSession
+```sh
 $ travis login --auto
 $ travis enable
 ```
 
 ## Report
 
-```ShellSession
+```sh
 $ popd
 $ export LAB_NUMBER=08
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
