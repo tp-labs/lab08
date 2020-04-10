@@ -1,6 +1,6 @@
 ## Laboratory work VIII
 
-[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/tp-labs/lab08/master/preview.png)](https://yandex.ru/efir/?stream_id=v0mnBi_R2Ldw)
+<a href="https://yandex.ru/efir/?stream_id=v0mnBi_R2Ldw"><img src="https://raw.githubusercontent.com/tp-labs/lab08/master/preview.png" width="640"/></a>
 
 Данная лабораторная работа посвещена изучению систем автоматизации развёртывания и управления приложениями на примере **Docker**
 
