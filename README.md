@@ -1,7 +1,5 @@
 ## Laboratory work VIII
 
-<a href="https://yandex.ru/efir/?stream_id=v0mnBi_R2Ldw"><img src="https://raw.githubusercontent.com/tp-labs/lab08/master/preview.png" width="640"/></a>
-
 Данная лабораторная работа посвещена изучению систем автоматизации развёртывания и управления приложениями на примере **Docker**
 
 ```sh
@@ -165,5 +163,5 @@ $ gist REPORT.md
 - [Instructions](https://docs.docker.com/engine/reference/builder/)
 
 ```
-Copyright (c) 2015-2019 The ISC Authors
+Copyright (c) 2015-2021 The ISC Authors
 ```
